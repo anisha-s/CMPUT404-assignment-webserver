@@ -94,7 +94,7 @@ class MyWebServer(socketserver.BaseRequestHandler):
                 else:
                     path = f_url + "/index.html"
                     content = self.get_content(path)
-                    self.request.sendall((possible_reponses["301"] + 'http://localhost:8080/www/' + r_url + "/"
+                    self.request.sendall((possible_reponses["301"] + 'http://localhost:8080/www' + r_url + "/"
                                           + "\r\nContent-Type: text/html\r\n\r\n"
                                           + "".join(content)).encode())
         else:
